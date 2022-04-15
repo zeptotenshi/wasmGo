@@ -1,4 +1,4 @@
-module github.com/zeptotenshi/wasmGo/aframe
+module github.com/zeptotenshi/wasmGo/firebase
 
 go 1.16
 
