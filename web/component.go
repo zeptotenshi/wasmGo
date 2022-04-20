@@ -27,6 +27,14 @@ type Component struct {
 	Vals map[string]Attribute
 }
 
+func (c *Component) ID() string {
+	return c.Name
+}
+
+func (c *Component) Length() int {
+	return len(c.Vals)
+}
+
 func (c *Component) Mapped() (map[string]interface{}, error) {
 	if c.Vals == nil {
 		return nil, GOWEB_ERROR_COMPONENT_VALS_NIL
