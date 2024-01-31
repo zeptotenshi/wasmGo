@@ -212,11 +212,11 @@ func (elem *Element) StoreCacheValue(_name, _type string, _val interface{}) erro
 }
 
 // AddEventListener ...
-func (elem *Element) AddEventListener(_eventName string, _cb js.Func) error {
+func (elem *Element) AddEventListener(_eventName string, _cb js.Func, _opts map[string]interface{}) error {
 	if err := ValidJSValue(elem.String(), elem.Value); err != nil {
 		return fmt.Errorf("%s [addEventListener] [error]: %v", elem, err)
 	}
-	elem.Value.Call(function__addEventListener, _eventName, _cb)
+	elem.Value.Call(function__addEventListener, _eventName, _cb, _opts)
 	return nil
 }
 
